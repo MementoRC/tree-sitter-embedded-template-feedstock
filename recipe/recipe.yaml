@@ -25,8 +25,9 @@ requirements:
     - ${{ stdlib("c") }}
     - if: target_platform != build_platform
       then:
-        - python
         - cross-python_${{ target_platform }}
+        - crossenv
+        - python
   host:
     - pip
     - python
@@ -35,10 +36,11 @@ requirements:
     - python
 
 tests:
-  # - python:
-  #     imports:
-  #       - tree_sitter_embedded_template
-  #     pip_check: true
+  - python:
+      imports:
+        - tree_sitter_embedded_template
+      pip_check: true
+
   - script:
       - file $PREFIX/lib/python3.13/site-packages/tree_sitter_embedded_template/_binding.abi3.so
       - python -m pytest bindings/python/tests/
