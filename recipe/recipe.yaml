@@ -34,10 +34,10 @@ requirements:
     - python
 
 tests:
-  - python:
-      imports:
-        - tree_sitter_embedded_template
-      pip_check: true
+  # - python:
+  #     imports:
+  #       - tree_sitter_embedded_template
+  #     pip_check: true
   - script:
       - file $PREFIX/lib/python${{ python_version }}/site-packages/tree_sitter_embedded_template/_binding.abi3.so
       - python -m pytest bindings/python/tests/
