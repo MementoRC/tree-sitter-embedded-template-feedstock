@@ -17,7 +17,6 @@ build:
   script:
     - ${{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-build-isolation -vv
   number: 2
-  # skip: not arm64
 
 requirements:
   build:
@@ -40,7 +39,6 @@ tests:
         - tree_sitter_embedded_template
       pip_check: true
   - script:
-      - file $PREFIX/lib/python3.13/site-packages/tree_sitter_embedded_template/_binding.abi3.so
       - python -m pytest bindings/python/tests/
     requirements:
       run:
