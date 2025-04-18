@@ -39,7 +39,7 @@ tests:
   #       - tree_sitter_embedded_template
   #     pip_check: true
   - script:
-      - file $PREFIX/lib/python${PY_VER}/site-packages/tree_sitter_embedded_template/_binding.abi3.so
+      - file $PREFIX/lib/python3.13/site-packages/tree_sitter_embedded_template/_binding.abi3.so
       - python -m pytest bindings/python/tests/
     requirements:
       run:
